@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva tarea - Tasker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- HEADER IGUAL QUE EN LAS DEMÁS PANTALLAS -->
+        <header class="app-header">
+            <img src="images/logo.png" alt="Logo Tasker" class="logo-mini">
+
+            <nav class="header-icons">
+                <button class="icon-btn" aria-label="Notificaciones">🔔</button>
+                <button class="icon-btn" aria-label="Configuración">⚙</button>
+                <button class="icon-btn" aria-label="Menú">☰</button>
+            </nav>
+        </header>
+
+        <!-- CONTENIDO: DETALLES TAREA -->
+        <main class="app-main task-main">
+            <h1 class="task-title">Detalles Tarea</h1>
+
+            <form class="task-form">
+                <!-- Título de la tarea -->
+                <div class="task-group">
+                    <div class="task-label">Tarea</div>
+                    <input type="text" class="task-input" placeholder="Añadir título de la tarea">
+                </div>
+
+                <!-- Descripción -->
+                <div class="task-group">
+                    <div class="task-label">Descripción</div>
+                    <textarea class="task-textarea" rows="3" placeholder="Añadir descripción de tu tarea"></textarea>
+                </div>
+
+                <!-- Categoría -->
+                <div class="task-group task-group-row">
+                    <div class="task-label">Categoría</div>
+                    <div class="task-control">
+                        <select class="task-select">
+                            <option>Tareas pendientes</option>
+                            <option>Tareas universidad</option>
+                            <option>Otros pendientes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Fecha (botón HOY + mini calendario) -->
+                <div class="task-group task-group-row">
+                    <div class="task-label">Fecha</div>
+                    <div class="task-control">
+                        <button type="button" class="pill-btn" id="dateToggleBtn">Hoy</button>
+                        <input type="date" id="dateInput" class="task-date-input hidden">
+                    </div>
+                </div>
+
+                <!-- Prioridad (1 a 9, por defecto Normal) -->
+                <div class="task-group task-group-row">
+                    <div class="task-label">Prioridad</div>
+                    <div class="task-control">
+                        <div class="priority-control">
+                            <button type="button" class="priority-btn" id="priorityMinus">−</button>
+                            <span id="priorityLabel">Normal (5)</span>
+                            <button type="button" class="priority-btn" id="priorityPlus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asignar a -->
+                <div class="task-group task-group-row">
+                    <div class="task-label">Asignar a</div>
+                    <div class="task-control">
+                        <select class="task-select">
+                            <option>Yo mismo</option>
+                            <option>Sofía Reyes</option>
+                            <option>Alejandro Jiménez</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Proyecto -->
+                <div class="task-group task-group-row">
+                    <div class="task-label">Proyecto</div>
+                    <div class="task-control">
+                        <select class="task-select">
+                            <option>Ninguno</option>
+                            <option>Proyecto - Aprender Python</option>
+                            <option>Proyecto - Data Science</option>
+                            <option>Crear proyecto...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Botones inferiores -->
+                <div class="task-buttons">
+                    <button type="button" class="secondary-btn" onclick="window.location.href='home.html'">
+                        Cancelar
+                    </button>
+                    <button type="button" class="primary-btn" id="addTaskBtn">
+                        Añadir
+                    </button>
+                </div>
+            </form>
+        </main>
+
+        <!-- NAV INFERIOR -->
+        <nav class="bottom-nav">
+            <button class="bottom-nav-btn"
+                    aria-label="Calendario"
+                    onclick="window.location.href='calendar.html'">
+                📅
+            </button>
+
+            <button class="bottom-nav-btn bottom-nav-btn-active"
+                    aria-label="Home"
+                    onclick="window.location.href='home.html'">
+                ⌂
+            </button>
+
+            <button class="bottom-nav-btn"
+                    aria-label="Regresar"
+                    onclick="window.location.href='home.html'">
+                ↩
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

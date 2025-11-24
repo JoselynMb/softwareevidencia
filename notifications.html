@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Notificaciones - Tasker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- HEADER -->
+        <header class="app-header">
+            <img src="images/logo.png" alt="Logo Tasker" class="logo-mini">
+
+            <nav class="header-icons">
+                <button class="icon-btn" aria-label="Notificaciones">🔔</button>
+                <button class="icon-btn" aria-label="Configuración">⚙</button>
+                <button class="icon-btn" aria-label="Menú">☰</button>
+            </nav>
+        </header>
+
+        <!-- CONTENIDO -->
+        <main class="app-main notifications-main">
+            <h1 class="notifications-title">Notificaciones</h1>
+
+            <!-- HOY -->
+            <section class="notif-group" data-group-id="hoy">
+                <div class="notif-group-header">
+                    <h2 class="notif-group-title">Hoy</h2>
+                    <button type="button" class="icon-btn-small notif-toggle-btn">▼</button>
+                </div>
+
+                <div class="notif-list">
+                    <div class="notif-item">
+                        <div class="notif-main">
+                            <span class="notif-icon">⏰</span>
+                            <div>
+                                <span class="notif-task">Curso Codedex</span>
+                                <span class="notif-time" data-original-time="09:00">09:00</span>
+                            </div>
+                        </div>
+                        <div class="notif-meta">
+                            <span class="notif-tag">Tareas pendientes</span>
+                            <button type="button" class="notif-repeat-btn">Repetir</button>
+                            <button type="button" class="notif-delete-btn">🗑️</button>
+                        </div>
+                    </div>
+
+                    <div class="notif-item">
+                        <div class="notif-main">
+                            <span class="notif-icon">⏰</span>
+                            <div>
+                                <span class="notif-task">Código para promedio</span>
+                                <span class="notif-time" data-original-time="10:30">10:30</span>
+                            </div>
+                        </div>
+                        <div class="notif-meta">
+                            <span class="notif-tag">Tareas universidad</span>
+                            <button type="button" class="notif-repeat-btn">Repetir</button>
+                            <button type="button" class="notif-delete-btn">🗑️</button>
+                        </div>
+                    </div>
+
+                    <div class="notif-item">
+                        <div class="notif-main">
+                            <span class="notif-icon">⏰</span>
+                            <div>
+                                <span class="notif-task">Completar curso Udemy</span>
+                                <span class="notif-time" data-original-time="16:00">16:00</span>
+                            </div>
+                        </div>
+                        <div class="notif-meta">
+                            <span class="notif-tag">Otros pendientes</span>
+                            <button type="button" class="notif-repeat-btn">Repetir</button>
+                            <button type="button" class="notif-delete-btn">🗑️</button>
+                        </div>
+                    </div>
+
+                    <p class="notif-empty-message">Sin notificaciones</p>
+                </div>
+            </section>
+
+            <!-- AYER -->
+            <section class="notif-group" data-group-id="ayer">
+                <div class="notif-group-header">
+                    <h2 class="notif-group-title">Ayer</h2>
+                    <button type="button" class="icon-btn-small notif-toggle-btn">▼</button>
+                </div>
+
+                <div class="notif-list">
+                    <div class="notif-item">
+                        <div class="notif-main">
+                            <span class="notif-icon">❗</span>
+                            <div>
+                                <span class="notif-task">Realización del dashboard</span>
+                                <span class="notif-time" data-original-time="11:00">11:00</span>
+                            </div>
+                        </div>
+                        <div class="notif-meta">
+                            <span class="notif-tag">Tareas por entregar</span>
+                            <button type="button" class="notif-repeat-btn">Repetir</button>
+                            <button type="button" class="notif-delete-btn">🗑️</button>
+                        </div>
+                    </div>
+
+                    <p class="notif-empty-message">Sin notificaciones</p>
+                </div>
+            </section>
+
+            <!-- SEMANA PASADA -->
+            <section class="notif-group" data-group-id="semana">
+                <div class="notif-group-header">
+                    <h2 class="notif-group-title">Semana pasada</h2>
+                    <button type="button" class="icon-btn-small notif-toggle-btn">▼</button>
+                </div>
+
+                <div class="notif-list">
+                    <div class="notif-item">
+                        <div class="notif-main">
+                            <span class="notif-icon">❗</span>
+                            <div>
+                                <span class="notif-task">Reunión con departamento</span>
+                                <span class="notif-time" data-original-time="08:00">08:00</span>
+                            </div>
+                        </div>
+                        <div class="notif-meta">
+                            <span class="notif-tag">Reuniones</span>
+                            <button type="button" class="notif-repeat-btn">Repetir</button>
+                            <button type="button" class="notif-delete-btn">🗑️</button>
+                        </div>
+                    </div>
+
+                    <p class="notif-empty-message">Sin notificaciones</p>
+                </div>
+            </section>
+
+            <!-- BOTÓN BORRAR TODO -->
+            <div class="notifications-actions">
+                <button type="button" class="secondary-btn" id="clearAllNotifsBtn">
+                    Borrar todas las notificaciones
+                </button>
+            </div>
+
+            <!-- BOTÓN CERRAR -->
+            <div class="notifications-actions">
+                <button type="button" class="secondary-btn"
+                        onclick="window.location.href='home.html'">
+                    Cerrar
+                </button>
+            </div>
+        </main>
+
+        <!-- NAV INFERIOR -->
+        <nav class="bottom-nav">
+            <button class="bottom-nav-btn"
+                    aria-label="Calendario"
+                    onclick="window.location.href='calendar.html'">
+                📅
+            </button>
+
+            <button class="bottom-nav-btn bottom-nav-btn-active"
+                    aria-label="Home"
+                    onclick="window.location.href='home.html'">
+                ⌂
+            </button>
+
+            <button class="bottom-nav-btn"
+                    aria-label="Regresar"
+                    onclick="window.location.href='home.html'">
+                ↩
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

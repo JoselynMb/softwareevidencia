@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle proyecto - Tasker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- HEADER -->
+        <header class="app-header">
+            <img src="images/logo.png" alt="Logo Tasker" class="logo-mini">
+
+            <nav class="header-icons">
+                <button class="icon-btn" aria-label="Notificaciones">🔔</button>
+                <button class="icon-btn" aria-label="Configuración">⚙</button>
+                <button class="icon-btn" aria-label="Menú">☰</button>
+            </nav>
+        </header>
+
+        <!-- CONTENIDO: DETALLE PROYECTO -->
+        <main class="app-main project-main">
+            <h1 class="task-title">Detalle proyecto</h1>
+
+            <form class="task-form">
+                <!-- Título corto -->
+                <div class="task-group">
+                    <div class="task-label">Título</div>
+                    <input type="text" class="task-input" placeholder="Añadir título del proyecto">
+                </div>
+
+                <!-- Descripción larga -->
+                <div class="task-group">
+                    <div class="task-label">Descripción</div>
+                    <textarea class="task-textarea" rows="3" placeholder="Añadir descripción del proyecto"></textarea>
+                </div>
+
+                <!-- Categoría -->
+                <div class="task-group task-group-row">
+                    <div class="task-label">Categoría</div>
+                    <div class="task-control">
+                        <select class="task-select">
+                            <option>Personal</option>
+                            <option>Profesional</option>
+                            <option>Trabajo</option>
+                            <option>Estudios</option>
+                            <option>Salud</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Plazo -->
+                <div class="task-group task-group-row">
+                    <div class="task-label">Plazo</div>
+                    <div class="task-control">
+                        <select class="task-select">
+                            <option>Una semana</option>
+                            <option>Dos semanas</option>
+                            <option>Un mes</option>
+                            <option>Tres meses</option>
+                            <option>Seis meses</option>
+                            <option>Un año</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Prioridad proyecto (1 a 5) -->
+                <div class="task-group task-group-row">
+                    <div class="task-label">Prioridad</div>
+                    <div class="task-control">
+                        <div class="priority-control">
+                            <button type="button" class="priority-btn" id="projectPriorityMinus">−</button>
+                            <span id="projectPriorityLabel">1</span>
+                            <button type="button" class="priority-btn" id="projectPriorityPlus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asignar a (múltiples personas) -->
+                <div class="task-group">
+                    <div class="task-label">Asignar a</div>
+                    <div class="project-assign-list">
+                        <label>
+                            <input type="checkbox" checked>
+                            Yo mismo
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            Sofía Reyes
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            Alejandro Jiménez
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            Equipo completo
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Tareas del proyecto -->
+                <div class="task-group">
+                    <div class="task-label">Tareas del proyecto</div>
+
+                    <div class="project-tasks-box">
+                        <div id="projectTasksContainer" class="project-tasks-container">
+                            <!-- Aquí se irán agregando las tareas -->
+                        </div>
+
+                        <button type="button" class="primary-btn project-add-task-btn" id="addProjectTaskBtn">
+                            Añadir tarea
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botones inferiores -->
+                <div class="task-buttons">
+                    <button type="button" class="secondary-btn"
+                            onclick="window.location.href='projects.html'">
+                        Cancelar
+                    </button>
+                    <button type="button" class="primary-btn"
+                            onclick="window.location.href='proyecto-creado.html'">
+                        Crear proyecto
+                    </button>
+                </div>
+
+            </form>
+        </main>
+
+        <!-- NAV INFERIOR -->
+        <nav class="bottom-nav">
+            <button class="bottom-nav-btn"
+                    aria-label="Calendario"
+                    onclick="window.location.href='calendar.html'">
+                📅
+            </button>
+
+            <button class="bottom-nav-btn bottom-nav-btn-active"
+                    aria-label="Home"
+                    onclick="window.location.href='home.html'">
+                ⌂
+            </button>
+
+            <button class="bottom-nav-btn"
+                    aria-label="Regresar"
+                    onclick="window.location.href='projects.html'">
+                ↩
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

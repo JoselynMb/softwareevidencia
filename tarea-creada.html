@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarea añadida - Tasker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- HEADER IGUAL QUE EN TODAS LAS PANTALLAS -->
+        <header class="app-header">
+            <img src="images/logo.png" alt="Logo Tasker" class="logo-mini">
+
+            <nav class="header-icons">
+                <button class="icon-btn" aria-label="Notificaciones">🔔</button>
+                <button class="icon-btn" aria-label="Configuración">⚙</button>
+                <button class="icon-btn" aria-label="Menú">☰</button>
+            </nav>
+        </header>
+
+        <!-- CONTENIDO: MENSAJE DE ÉXITO -->
+        <main class="app-main success-main">
+            <div class="success-content">
+                <p class="success-message">
+                    ¡Nueva tarea registrada<br>con éxito!
+                </p>
+
+                <div class="success-buttons">
+                    <!-- Botón para regresar al Home -->
+                    <button type="button" class="secondary-btn" id="successBackBtn">
+                        Regresar
+                    </button>
+
+
+                    <!-- Botón para editar (volver al formulario) -->
+                    <button type="button" class="primary-btn"
+                            onclick="window.location.href='nueva-tarea.html'">
+                        Editar
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- NAV INFERIOR -->
+        <nav class="bottom-nav">
+            <button class="bottom-nav-btn"
+                    aria-label="Calendario"
+                    onclick="window.location.href='calendar.html'">
+                📅
+            </button>
+
+            <button class="bottom-nav-btn bottom-nav-btn-active"
+                    aria-label="Home"
+                    onclick="window.location.href='home.html'">
+                ⌂
+            </button>
+
+            <button class="bottom-nav-btn"
+                    aria-label="Regresar"
+                    onclick="window.location.href='home.html'">
+                ↩
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

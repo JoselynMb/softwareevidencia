@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión - Tasker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Reutilizamos el MISMO CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <!-- Contenedor principal tipo "pantalla de celular" -->
+    <div class="app">
+
+        <!-- ENCABEZADO (igual que en inicio) -->
+        <header class="app-header">
+            <img src="images/logo.png" alt="Logo Tasker" class="logo-mini">
+
+            <nav class="header-icons">
+                <button class="icon-btn" aria-label="Notificaciones">🔔</button>
+                <button class="icon-btn" aria-label="Configuración">⚙</button>
+                <button class="icon-btn" aria-label="Menú">☰</button>
+            </nav>
+        </header>
+
+        <!-- CONTENIDO PRINCIPAL: FORMULARIO DE LOGIN -->
+        <main class="app-main login-main">
+            <section class="login-section">
+                <form class="login-form">
+                    <!-- Campo usuario -->
+                    <div class="form-group">
+                        <label for="username">Nombre de usuario</label>
+                        <input type="text" id="username" name="username">
+                    </div>
+
+                    <!-- Campo contraseña -->
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="auth-buttons">
+                        <button type="button" class="primary-btn"
+                                onclick="window.location.href='home.html'">
+                            Iniciar sesión
+                        </button>
+                        <button type="button" class="primary-btn">
+                            Registrarse
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendario - Tasker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Mismo CSS de siempre -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- HEADER IGUAL QUE EN LAS DEMÁS PANTALLAS -->
+        <header class="app-header">
+            <img src="images/logo.png" alt="Logo Tasker" class="logo-mini">
+
+            <nav class="header-icons">
+                <button class="icon-btn" aria-label="Notificaciones">🔔</button>
+                <button class="icon-btn" aria-label="Configuración">⚙</button>
+                <button class="icon-btn" aria-label="Menú">☰</button>
+            </nav>
+        </header>
+
+        <!-- CONTENIDO PRINCIPAL: CALENDARIO -->
+        <main class="app-main calendar-main">
+            <h1 class="calendar-title">Mi calendario</h1>
+
+            <!-- Encabezados de los días -->
+            <div class="calendar-grid">
+                <div class="calendar-day-name">Dom</div>
+                <div class="calendar-day-name">Lun</div>
+                <div class="calendar-day-name">Mar</div>
+                <div class="calendar-day-name">Mie</div>
+                <div class="calendar-day-name">Jue</div>
+                <div class="calendar-day-name">Vie</div>
+                <div class="calendar-day-name">Sab</div>
+
+                <!-- Días del mes (estático) -->
+                <!-- fila 1 -->
+                <button class="calendar-day">1</button>
+                <button class="calendar-day">2</button>
+                <button class="calendar-day">3</button>
+                <button class="calendar-day">4</button>
+                <button class="calendar-day">5</button>
+                <button class="calendar-day">6</button>
+                <button class="calendar-day">7</button>
+
+                <!-- fila 2 -->
+                <button class="calendar-day">8</button>
+                <button class="calendar-day">9</button>
+                <button class="calendar-day calendar-day-selected">10</button>
+                <button class="calendar-day">11</button>
+                <button class="calendar-day">12</button>
+                <button class="calendar-day">13</button>
+                <button class="calendar-day">14</button>
+
+                <!-- fila 3 -->
+                <button class="calendar-day">15</button>
+                <button class="calendar-day">16</button>
+                <button class="calendar-day">17</button>
+                <button class="calendar-day">18</button>
+                <button class="calendar-day">19</button>
+                <button class="calendar-day">20</button>
+                <button class="calendar-day">21</button>
+
+                <!-- fila 4 -->
+                <button class="calendar-day">22</button>
+                <button class="calendar-day">23</button>
+                <button class="calendar-day">24</button>
+                <button class="calendar-day">25</button>
+                <button class="calendar-day">26</button>
+                <button class="calendar-day">27</button>
+                <button class="calendar-day">28</button>
+
+                <!-- fila 5 -->
+                <button class="calendar-day">29</button>
+                <button class="calendar-day">30</button>
+                <button class="calendar-day">31</button>
+            </div>
+
+            <!-- Botón para nuevo evento -->
+            <div class="new-event-wrapper">
+                <button class="primary-btn">
+                    Agregar nuevo evento  +
+                </button>
+            </div>
+        </main>
+
+        <!-- NAV INFERIOR -->
+        <nav class="bottom-nav">
+            <!-- En calendario, este es el activo -->
+            <button class="bottom-nav-btn bottom-nav-btn-active"
+                    aria-label="Calendario"
+                    onclick="window.location.href='calendar.html'">
+                📅
+            </button>
+
+            <button class="bottom-nav-btn"
+                    aria-label="Home"
+                    onclick="window.location.href='home.html'">
+                ⌂
+            </button>
+
+            <button class="bottom-nav-btn"
+                    aria-label="Regresar"
+                    onclick="window.location.href='home.html'">
+                ↩
+            </button>
+        </nav>
+    </div>
+
+    <!-- JS general (aunque aquí casi no usamos nada) -->
+    <script src="js/main.js"></script>
+</body>
+</html>

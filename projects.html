@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyectos - Tasker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- HEADER -->
+        <header class="app-header">
+            <img src="images/logo.png" alt="Logo Tasker" class="logo-mini">
+
+            <nav class="header-icons">
+                <button class="icon-btn" aria-label="Notificaciones">🔔</button>
+                <button class="icon-btn" aria-label="Configuración">⚙</button>
+                <button class="icon-btn" aria-label="Menú">☰</button>
+            </nav>
+        </header>
+
+        <!-- CONTENIDO -->
+        <main class="app-main projects-main">
+            <h1 class="projects-title">Proyectos</h1>
+
+            <!-- PROYECTO 1 -->
+            <section class="project" data-project-id="python">
+                <div class="project-header">
+                    <div class="project-title-row">
+                        <h2 class="project-name">Proyecto - Aprender Python</h2>
+
+                        <!-- Flecha pegada al título -->
+                        <button type="button" class="icon-btn-small project-toggle-btn">
+                            ▼
+                        </button>
+
+                        <!-- Basura, más pequeña -->
+                        <button type="button" class="icon-btn-small project-delete-btn">
+                            🗑️
+                        </button>
+
+                        <!-- Estado compacto, pegado a la derecha -->
+                        <span class="project-status-badge status-inactive">
+                            Inactivo
+                        </span>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <ul class="project-task-list">
+                        <li class="project-task-item task-item">
+                            <button class="heart-btn"></button>
+                            <span class="task-text">Curso Codedex</span>
+                            <div class="task-actions">
+                                <button class="icon-btn-small edit-task-btn" type="button">✏️</button>
+                                <button class="icon-btn-small delete-task-btn" type="button">🗑️</button>
+                            </div>
+                        </li>
+                        <li class="project-task-item task-item">
+                            <button class="heart-btn"></button>
+                            <span class="task-text">Código para promedio</span>
+                            <div class="task-actions">
+                                <button class="icon-btn-small edit-task-btn" type="button">✏️</button>
+                                <button class="icon-btn-small delete-task-btn" type="button">🗑️</button>
+                            </div>
+                        </li>
+                        <li class="project-task-item task-item">
+                            <button class="heart-btn"></button>
+                            <span class="task-text">Completar curso Udemy</span>
+                            <div class="task-actions">
+                                <button class="icon-btn-small edit-task-btn" type="button">✏️</button>
+                                <button class="icon-btn-small delete-task-btn" type="button">🗑️</button>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="project-buttons">
+                        <button type="button" class="secondary-btn project-finish-btn">
+                            Terminado
+                        </button>
+                        <button type="button" class="secondary-btn project-edit-btn">
+                            Editar
+                        </button>
+                        <button type="button" class="primary-btn project-create-task-btn">
+                            Crear tarea
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROYECTO 2 -->
+            <section class="project" data-project-id="datascience">
+                <div class="project-header">
+                    <div class="project-title-row">
+                        <h2 class="project-name">Proyecto - Data Science</h2>
+
+                        <!-- Flecha -->
+                        <button type="button" class="icon-btn-small project-toggle-btn">
+                            ▼
+                        </button>
+
+                        <!-- Basura -->
+                        <button type="button" class="icon-btn-small project-delete-btn">
+                            🗑️
+                        </button>
+
+                        <!-- Estado -->
+                        <span class="project-status-badge status-inactive">
+                            Inactivo
+                        </span>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <ul class="project-task-list">
+                        <li class="project-task-item task-item">
+                            <button class="heart-btn"></button>
+                            <span class="task-text">Curso Big Data</span>
+                            <div class="task-actions">
+                                <button class="icon-btn-small edit-task-btn" type="button">✏️</button>
+                                <button class="icon-btn-small delete-task-btn" type="button">🗑️</button>
+                            </div>
+                        </li>
+                        <li class="project-task-item task-item">
+                            <button class="heart-btn"></button>
+                            <span class="task-text">Instalar Anaconda</span>
+                            <div class="task-actions">
+                                <button class="icon-btn-small edit-task-btn" type="button">✏️</button>
+                                <button class="icon-btn-small delete-task-btn" type="button">🗑️</button>
+                            </div>
+                        </li>
+                        <li class="project-task-item task-item">
+                            <button class="heart-btn"></button>
+                            <span class="task-text">Instalar todo en Visual Code</span>
+                            <div class="task-actions">
+                                <button class="icon-btn-small edit-task-btn" type="button">✏️</button>
+                                <button class="icon-btn-small delete-task-btn" type="button">🗑️</button>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="project-buttons">
+                        <button type="button" class="secondary-btn project-finish-btn">
+                            Terminado
+                        </button>
+                        <button type="button" class="secondary-btn project-edit-btn">
+                            Editar
+                        </button>
+                        <button type="button" class="primary-btn project-create-task-btn">
+                            Crear tarea
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botón crear proyecto -->
+            <div class="new-project-wrapper">
+                <button type="button" class="primary-btn"
+                        onclick="window.location.href='crear-proyecto.html'">
+                    Crear Proyecto
+                </button>
+            </div>
+        </main>
+
+        <!-- NAV INFERIOR -->
+        <nav class="bottom-nav">
+            <button class="bottom-nav-btn"
+                    aria-label="Calendario"
+                    onclick="window.location.href='calendar.html'">
+                📅
+            </button>
+
+            <button class="bottom-nav-btn bottom-nav-btn-active"
+                    aria-label="Home"
+                    onclick="window.location.href='home.html'">
+                ⌂
+            </button>
+
+            <button class="bottom-nav-btn"
+                    aria-label="Regresar"
+                    onclick="window.location.href='home.html'">
+                ↩
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

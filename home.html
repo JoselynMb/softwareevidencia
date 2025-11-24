@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Tasker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Usamos el mismo CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- HEADER IGUAL QUE EN LAS OTRAS PANTALLAS -->
+        <header class="app-header">
+            <img src="images/logo.png" alt="Logo Tasker" class="logo-mini">
+
+            <nav class="header-icons">
+                <button class="icon-btn" aria-label="Notificaciones">🔔</button>
+                <button class="icon-btn" aria-label="Configuración">⚙</button>
+                <button class="icon-btn" aria-label="Menú">☰</button>
+            </nav>
+        </header>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="app-main home-main">
+
+            <!-- CARRUSEL DE PROYECTOS -->
+            <section class="carousel">
+                <button class="carousel-btn carousel-btn-prev" aria-label="Anterior">«</button>
+
+                <div class="carousel-window">
+                    <div class="carousel-track">
+                        <!-- Slide 1: Proyectos (ahora clickeable) -->
+                        <article class="carousel-item" data-link="projects.html">
+                            <img src="images/proyectos.jpg" alt="Proyectos">
+                            <span class="carousel-caption">Proyectos</span>
+                        </article>
+
+                        <!-- Slide 2 -->
+                        <article class="carousel-item">
+                            <img src="images/tareas-pendientes.jpg" alt="Tareas pendientes">
+                            <span class="carousel-caption">Tareas pendientes</span>
+                        </article>
+
+                        <!-- Slide 3 -->
+                        <article class="carousel-item">
+                            <img src="images/tareas-universidad.jpg" alt="Tareas universidad">
+                            <span class="carousel-caption">Tareas universidad</span>
+                        </article>
+
+                        <!-- Slide 4 -->
+                        <article class="carousel-item">
+                            <img src="images/otros-pendientes.jpg" alt="Otros pendientes">
+                            <span class="carousel-caption">Otros pendientes</span>
+                        </article>
+                    </div>
+                </div>
+
+                <button class="carousel-btn carousel-btn-next" aria-label="Siguiente">»</button>
+            </section>
+
+
+            <!-- SECCIÓN HOY + TAREAS -->
+            <section class="today-section">
+                <div class="today-header">
+                    <button class="today-menu-btn">☰</button>
+                    <h2>Hoy</h2>
+                </div>
+
+                <!-- Pestañas de días -->
+                <div class="day-tabs">
+                    <button class="day-tab">VIE</button>
+                    <button class="day-tab">SAB</button>
+                    <button class="day-tab day-tab-active">DOM</button>
+                    <button class="day-tab">LUN</button>
+                    <button class="day-tab">MAR</button>
+                </div>
+
+                <!-- Lista de tareas -->
+                <ul class="task-list">
+                    <li class="task-item">
+                        <button class="heart-btn"></button>
+                        <span class="task-text">Sacar a pasear al perro</span>
+                        <div class="task-actions">
+                            <button class="icon-btn-small edit-task-btn" type="button">✏️</button>
+                            <button class="icon-btn-small delete-task-btn" type="button">🗑️</button>
+                        </div>
+                    </li>
+
+                    <li class="task-item">
+                        <button class="heart-btn"></button>
+                        <span class="task-text">Revisar lista de compras</span>
+                        <div class="task-actions">
+                            <button class="icon-btn-small edit-task-btn" type="button">✏️</button>
+                            <button class="icon-btn-small delete-task-btn" type="button">🗑️</button>
+                        </div>
+                    </li>
+
+                    <li class="task-item">
+                        <button class="heart-btn"></button>
+                        <span class="task-text">Terminar tarea de Software</span>
+                        <div class="task-actions">
+                            <button class="icon-btn-small edit-task-btn" type="button">✏️</button>
+                            <button class="icon-btn-small delete-task-btn" type="button">🗑️</button>
+                        </div>
+                    </li>
+
+                    <li class="task-item">
+                        <button class="heart-btn"></button>
+                        <span class="task-text">Correr</span>
+                        <div class="task-actions">
+                            <button class="icon-btn-small edit-task-btn" type="button">✏️</button>
+                            <button class="icon-btn-small delete-task-btn" type="button">🗑️</button>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Botón Nueva tarea -->
+                <div class="new-task-wrapper">
+                    <button class="primary-btn" onclick="window.location.href='nueva-tarea.html'">
+                        Nueva tarea
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- NAV INFERIOR -->
+        <nav class="bottom-nav">
+            <button class="bottom-nav-btn"
+                    aria-label="Calendario"
+                    onclick="window.location.href='calendar.html'">
+                📅
+            </button>
+
+            <button class="bottom-nav-btn bottom-nav-btn-active"
+                    aria-label="Home"
+                    onclick="window.location.href='home.html'">
+                ⌂
+            </button>
+
+            <button class="bottom-nav-btn"
+                    aria-label="Regresar"
+                    onclick="window.location.href='home.html'">
+                ↩
+            </button>
+        </nav>
+    </div>
+
+    <!-- JavaScript para carrusel y corazones -->
+    <script src="js/main.js"></script>
+</body>
+</html>

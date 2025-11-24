@@ -1,107 +1,960 @@
-/* =============================
-   ESTILOS GENERALES
-============================= */
+/* Reinicio básico para que todo se vea consistente */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Fondo gris oscuro que simula el marco del celular */
 body {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #333333;
+    min-height: 100vh;
+
+    /* Centrar la "pantalla" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-/* =============================
-   ENCABEZADO CON FONDO
-============================= */
-.header {
-  width: 100%;
-  height: 200px;
-  background-image: url("../images/fondo.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+/* Contenedor principal de la app */
+.app {
+    width: 360px;
+    min-height: 640px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    /* 🔥 Clave para pegar la barra abajo */
+    display: flex;
+    flex-direction: column;
 }
 
-/* LOGO ARRIBA A LA IZQUIERDA */
-.logo {
-  width: 60px;
-  height: 60px;
+/* Contenido entre header y barra inferior */
+.app-main {
+    flex: 1;              /* llena todo el espacio disponible */
+    overflow-y: auto;     /* por si alguna pantalla se hace larga */
 }
 
-/* ICONO DE MENÚ */
-.menu {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
+
+
+
+
+
+/* =========================================
+   ENCABEZADO
+   ========================================= */
+
+.app-header {
+    position: relative;
+    height: 130px;
+
+    /* Imagen de fondo (nota: el CSS está dentro de /CSS,
+       por eso usamos ../ para salir a la carpeta raíz) */
+    background-image: url("../images/fondo.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-.menu-bar {
-  width: 35px;
-  height: 4px;
-  background-color: #5e525b;
-  border-radius: 3px;
+/* Logo pequeño encima del fondo */
+.logo-mini {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    height: 40px;
 }
 
-/* =============================
+/* Contenedor de los iconos de la derecha */
+.header-icons {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Botoncitos de iconos (solo estilo visual) */
+.icon-btn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* =========================================
    CONTENIDO PRINCIPAL
-============================= */
-.main {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 40px;
+   ========================================= */
+
+.app-main {
+    padding: 40px 24px;
 }
 
-/* TARJETA CENTRAL */
-.card {
-  background-color: #650b44;
-  width: 80%;
-  max-width: 400px;
-  padding: 40px 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* Sección central de bienvenida */
+.welcome-card {
+    text-align: center;
 }
 
-/* LOGO CENTRAL */
-.logo-central {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 20px;
+/* Cuadro morado con el logo grande adentro */
+.welcome-logo-box {
+    width: 210px;
+    height: 210px;
+    margin: 0 auto 24px auto;
+    background-color: #6c124b; /* morado similar al figma */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* TEXTO DE BIENVENIDA */
-h1 {
-  color: #ffffff;
-  font-size: 24px;
-  margin-bottom: 25px;
+.welcome-logo-box img {
+    max-width: 70%;
+    height: auto;
 }
 
-/* BOTÓN */
-#btnComenzar {
-  background-color: #6e646b;
-  color: #ffffff;
-  border: none;
-  padding: 10px 30px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
+/* Título "Bienvenidos a Tasker" */
+.welcome-title {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
 }
 
-#btnComenzar:hover {
-  background-color: #4d444a;
+/* =========================================
+   BOTÓN PRINCIPAL
+   ========================================= */
+
+.primary-btn {
+    padding: 8px 26px;
+    border-radius: 999px;          /* forma de píldora */
+    border: none;
+    background-color: #e5e5e5;     /* gris claro */
+    cursor: pointer;
+    font-size: 0.9rem;
+
+    /* Suavizar cambios al hacer hover */
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
+/* Efecto al pasar el mouse: gris un poco más oscuro */
+.primary-btn:hover {
+    background-color: #cfcfcf;
+}
+
+/* Pequeño efecto al hacer clic */
+.primary-btn:active {
+    transform: scale(0.98);
+}
+
+
+
+
+
+/* =========================================
+   PANTALLA: INICIO DE SESIÓN
+   ========================================= */
+
+.login-main {
+    /* un poco más de espacio arriba para que
+       el formulario quede más centrado verticalmente */
+    padding: 60px 40px;
+}
+
+.login-section {
+    width: 100%;
+}
+
+.login-form {
+    margin-top: 40px;
+}
+
+/* Cada bloque de label + input */
+.form-group {
+    margin-bottom: 26px;
+    text-align: left;
+}
+
+/* Texto de los labels */
+.form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Campos de texto */
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #b3b3b3;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de los botones de abajo */
+.auth-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;            /* separación entre botones */
+    align-items: center;  /* centrarlos */
+}
+
+/* Seguimos usando .primary-btn y su :hover de antes,
+   así todos los botones se comportan igual */
+
+
+
+
+
+
+
+   /* =========================================
+   PANTALLA HOME
+   ========================================= */
+
+.home-main {
+    padding: 16px 16px 72px 16px; /* espacio para el nav inferior */
+}
+
+/* -------- Carrusel -------- */
+
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.carousel-window {
+    overflow: hidden;
+    flex: 1;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item {
+    min-width: 100%; /* cada slide ocupa todo el ancho */
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+
+/* Texto blanco sobre la foto */
+.carousel-caption {
+    position: absolute;
+    left: 12px;
+    bottom: 8px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Flechas laterales */
+.carousel-btn {
+    border: none;
+    background-color: #6c124b;
+    color: #ffffff;
+    width: 30px;
+    height: 60px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* -------- Sección Hoy -------- */
+
+.today-section {
+    margin-top: 8px;
+}
+
+.today-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.today-header h2 {
+    font-size: 1.1rem;
+}
+
+.today-menu-btn {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+}
+
+/* Pestañas de días */
+.day-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.day-tab {
+    flex: 1;
+    padding: 6px 0;
+    border-radius: 20px;
+    border: none;
+    background-color: #e9e9e9;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+.day-tab-active {
+    background-color: #b51622; /* rojo */
+    color: #ffffff;
+}
+
+/* -------- Lista de tareas -------- */
+
+.task-list {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.task-actions {
+    display: flex;
+    gap: 4px;
+}
+
+/* Botones pequeños (editar, eliminar) */
+.icon-btn-small {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Botón 'Nueva tarea' */
+.new-task-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+/* -------- Corazones -------- */
+
+.heart-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    border: 1px solid #b3b3b3;
+    background-color: #f3f3f3;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+/* Dibujamos el corazón con un pseudo-elemento  */
+.heart-btn::before {
+    content: "♡";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+}
+
+/* Cuando está activa: más grande y de color morado oscuro */
+.heart-active {
+    background-color: #3a293f;
+    transform: scale(1.15);
+}
+
+.heart-active::before {
+    content: "♥";
+    color: #ffffff;
+}
+
+/* -------- Navegación inferior -------- */
+
+.bottom-nav {
+    height: 56px;
+    background-color: #3c1b47;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom-nav-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.bottom-nav-btn-active {
+    opacity: 1;
+}
+
+
+
+
+
+
+/* =========================================
+   PANTALLA CALENDARIO
+   ========================================= */
+
+.calendar-main {
+    padding: 24px 24px 72px 24px;  /* espacio para el nav inferior */
+    text-align: center;
+}
+
+.calendar-title {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+}
+
+/* Grid de 7 columnas (días de la semana) */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
+/* Nombres de los días */
+.calendar-day-name {
+    font-size: 0.8rem;
+}
+
+/* Celdas de los días */
+.calendar-day {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Color al pasar el mouse por encima */
+.calendar-day:hover {
+    background-color: #b79aff;  /* morado claro como tu diseño */
+    color: #000000;
+}
+
+/* Día seleccionado (por ejemplo el 10) */
+.calendar-day-selected {
+    background-color: #b79aff;
+}
+
+/* Contenedor del botón "Agregar nuevo evento" */
+.new-event-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+/* =========================================
+   PANTALLA: NUEVA TAREA / DETALLES TAREA
+   ========================================= */
+
+.task-main {
+    padding: 24px 24px 72px 24px;  /* espacio para nav inferior */
+}
+
+.task-title {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.task-form {
+    margin-top: 10px;
+}
+
+/* Grupos de campos */
+.task-group {
+    margin-bottom: 16px;
+}
+
+.task-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+/* Versión en fila: etiqueta a la izquierda, control a la derecha */
+.task-group-row {
+    display: flex;
+    align-items: center;
+}
+
+.task-group-row .task-label {
+    margin-bottom: 0;
+}
+
+.task-group-row .task-control {
+    margin-left: 16px;
+    flex: 1;
+    text-align: right;
+}
+
+/* Inputs de texto */
+.task-input,
+.task-textarea {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #b3b3b3;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    resize: vertical;
+}
+
+/* Selects estilo pastilla */
+.task-select {
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid #d0d0d0;
+    background-color: #f2f2f2;
+    font-size: 0.85rem;
+}
+
+/* Botón "Hoy" */
+.pill-btn {
+    padding: 6px 18px;
+    border-radius: 999px;
+    border: none;
+    background-color: #f2f2f2;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+/* Input date que aparece como mini calendario */
+.task-date-input {
+    margin-top: 8px;
+    font-size: 0.85rem;
+}
+
+/* Clase para ocultar elementos */
+.hidden {
+    display: none;
+}
+
+/* Control de prioridad (+, - , etiqueta) */
+.priority-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f2f2f2;
+    border-radius: 999px;
+    padding: 4px 10px;
+}
+
+.priority-btn {
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Botones inferiores */
+.task-buttons {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Botón secundario (Cancelar) */
+.secondary-btn {
+    padding: 8px 26px;
+    border-radius: 999px;
+    border: none;
+    background-color: #e5e5e5;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.secondary-btn:hover {
+    background-color: #cfcfcf;
+}
+
+
+
+/* =========================================
+   PANTALLA: TAREA CREADA / MENSAJE ÉXITO
+   ========================================= */
+
+.success-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 24px 72px 24px;  /* deja espacio para el nav inferior */
+}
+
+.success-content {
+    text-align: center;
+}
+
+.success-message {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.success-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+
+
+
+/* Estado de tarea "eliminada" visualmente */
+.task-item-deleted .task-text,
+.task-item-deleted .edit-task-btn {
+    display: none; /* ocultamos texto y lápiz */
+}
+
+/* puedes opcionalmente poner el corazón más tenue */
+.task-item-deleted .heart-btn {
+    opacity: 0.4;
+}
+
+
+
+
+
+/* =========================================
+   PANTALLA PROYECTOS
+   ========================================= */
+
+.projects-main {
+    padding: 24px 24px 72px 24px;
+}
+
+.projects-title {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.project {
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 16px;
+}
+
+.project-title-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.project-name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+/* Estado del proyecto */
+.project-status-badge {
+    padding: 3px 8px;       /* más pequeño */
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: auto;      /* se va hasta la derecha */
+}
+
+/* Colores de estado */
+.status-inactive {
+    background-color: #e0e0e0;
+    color: #555555;
+}
+
+.status-in-progress {
+    background-color: #ffe58a;
+    color: #8a6d00;
+}
+
+.status-completed {
+    background-color: #c7f2a3;
+    color: #275d00;
+}
+
+.status-no-tasks {
+    background-color: #ffb3b3;
+    color: #7a0000;
+}
+
+/* NUEVO: proyecto eliminado */
+.status-deleted {
+    background-color: #ff7b7b;
+    color: #ffffff;
+}
+
+.project-body {
+    margin-top: 12px;
+}
+
+/* Lista de tareas dentro del proyecto: reutilizamos .task-item */
+.project-task-list {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+/* Botones de abajo de cada proyecto */
+/* Botones de abajo de cada proyecto: una sola fila y más pequeños */
+.project-buttons {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.project-buttons .secondary-btn,
+.project-buttons .primary-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+}
+
+/* Plegado del proyecto */
+.project.project-collapsed .project-body {
+    display: none;
+}
+
+/* Proyecto "eliminado" visualmente */
+.project.project-deleted .project-body {
+    display: none;
+    opacity: 0.4;
+}
+
+.new-project-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+
+
+
+/* =========================================
+   PANTALLA NOTIFICACIONES
+   ========================================= */
+
+.notifications-main {
+    padding: 24px 24px 72px 24px;
+}
+
+.notifications-title {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.notif-group {
+    margin-bottom: 20px;
+}
+
+.notif-group-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.notif-group-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-right: auto;
+}
+
+.notif-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.notif-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.notif-main {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.notif-icon {
+    font-size: 1.1rem;
+}
+
+.notif-task {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.notif-time {
+    display: block;
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+/* Parte derecha: etiqueta, repetir, borrar */
+.notif-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 24px; /* para alinearlo debajo del texto */
+}
+
+.notif-tag {
+    font-size: 0.7rem;
+    background-color: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 999px;
+}
+
+.notif-repeat-btn {
+    border: none;
+    background-color: #f2f2f2;
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.notif-delete-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Cuando la notificación está "eliminada" */
+.notif-item-deleted .notif-main,
+.notif-item-deleted .notif-repeat-btn,
+.notif-item-deleted .notif-tag {
+    opacity: 0.2;
+}
+
+.notif-item-deleted .notif-main {
+    text-decoration: line-through;
+}
+
+/* Placeholder de grupo vacío */
+.notif-empty-message {
+    display: none;
+    font-size: 0.8rem;
+    color: #777777;
+    text-align: center;
+}
+
+.notif-group-empty .notif-item {
+    display: none;
+}
+
+.notif-group-empty .notif-empty-message {
+    display: block;
+}
+
+/* Colapsar grupo */
+.notif-group-collapsed .notif-list {
+    display: none;
+}
+
+.notifications-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+
+/* =========================================
+   PANTALLA: CREAR PROYECTO
+   ========================================= */
+
+.project-main {
+    padding: 24px 24px 72px 24px;
+}
+
+/* Lista de asignación múltiple */
+.project-assign-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.9rem;
+}
+
+.project-assign-list label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Caja de tareas del proyecto */
+.project-tasks-box {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fafafa;
+}
+
+.project-tasks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.project-task-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.project-task-line input[type="text"] {
+    flex: 1;
+    padding: 4px 6px;
+    border: 1px solid #b3b3b3;
+    font-size: 0.85rem;
+}
+
+.project-task-delete-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Botón añadir tarea un poco más pequeño */
+.project-add-task-btn {
+    padding: 6px 18px;
+    font-size: 0.85rem;
+}
+
+/* Prioridad de proyecto (1 a 5) reutiliza priority-control,
+   solo cambiamos un poquito el tamaño del texto */
+#projectPriorityLabel {
+    font-size: 0.9rem;
+}

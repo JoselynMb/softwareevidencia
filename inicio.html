@@ -1,32 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tasker - Bienvenida</title>
-  <!-- Vinculación correcta con el CSS -->
-  <link rel="stylesheet" href="CSS/style.css" />
+    <meta charset="UTF-8">
+    <title>Inicio - Tasker</title>
+
+    <!-- Para que se vea bien en celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Enlazamos el archivo de estilos -->
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
-
 <body>
-  <!-- ENCABEZADO CON FONDO -->
-  <header class="header">
-    <img src="images/logo.png" alt="Logo Tasker" class="logo" />
-    <div class="menu">
-      <div class="menu-bar"></div>
-      <div class="menu-bar"></div>
-      <div class="menu-bar"></div>
-    </div>
-  </header>
+    <!-- Contenedor principal que simula la "pantalla" del celular -->
+    <div class="app">
+        
+        <!-- ENCABEZADO CON LA IMAGEN DE FONDO -->
+        <header class="app-header">
+            <!-- Logo pequeño en la barra superior -->
+            <img src="images/logo.png" alt="Logo Tasker" class="logo-mini">
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main class="main">
-    <div class="card">
-      <img src="images/logo.png" alt="Logo central" class="logo-central" />
-      <h1>Bienvenidos a Tasker</h1>
-      <button id="btnComenzar">Comenzar</button>
+            <!-- Iconos de la parte derecha (puedes cambiarlos luego por imágenes o SVG) -->
+            <nav class="header-icons">
+                <button class="icon-btn" aria-label="Notificaciones">🔔</button>
+                <button class="icon-btn" aria-label="Configuración">⚙</button>
+                <button class="icon-btn" aria-label="Menú">☰</button>
+            </nav>
+        </header>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="app-main">
+            <!-- Tarjeta de bienvenida -->
+            <section class="welcome-card">
+                <!-- Cuadro morado con el logo grande -->
+                <div class="welcome-logo-box">
+                    <img src="images/logo.png" alt="Logo Tasker grande">
+                </div>
+
+                <h1 class="welcome-title">Bienvenidos a Tasker</h1>
+
+                <!-- Botón principal -->
+                <button class="primary-btn" onclick="window.location.href='login.html'">
+                    Comenzar
+                </button>
+            </section>
+        </main>
+
     </div>
-  </main>
 </body>
 </html>
+
 

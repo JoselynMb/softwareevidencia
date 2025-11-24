@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto creado - Tasker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- HEADER -->
+        <header class="app-header">
+            <img src="images/logo.png" alt="Logo Tasker" class="logo-mini">
+
+            <nav class="header-icons">
+                <button class="icon-btn" aria-label="Notificaciones">🔔</button>
+                <button class="icon-btn" aria-label="Configuración">⚙</button>
+                <button class="icon-btn" aria-label="Menú">☰</button>
+            </nav>
+        </header>
+
+        <!-- CONTENIDO: MENSAJE DE ÉXITO -->
+        <main class="app-main success-main">
+            <div class="success-content">
+                <p class="success-message">
+                    ¡Proyecto creado<br>con éxito!
+                </p>
+
+                <div class="success-buttons">
+                    <!-- Volver a la pantalla anterior para editar el proyecto -->
+                    <button type="button" class="secondary-btn"
+                            onclick="window.location.href='crear-proyecto.html'">
+                        Editar proyecto
+                    </button>
+
+                    <!-- Ir a la lista de proyectos -->
+                    <button type="button" class="primary-btn"
+                            onclick="window.location.href='projects.html'">
+                        Ir a proyectos
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- NAV INFERIOR -->
+        <nav class="bottom-nav">
+            <button class="bottom-nav-btn"
+                    aria-label="Calendario"
+                    onclick="window.location.href='calendar.html'">
+                📅
+            </button>
+
+            <button class="bottom-nav-btn bottom-nav-btn-active"
+                    aria-label="Home"
+                    onclick="window.location.href='home.html'">
+                ⌂
+            </button>
+
+            <button class="bottom-nav-btn"
+                    aria-label="Regresar"
+                    onclick="window.location.href='projects.html'">
+                ↩
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
